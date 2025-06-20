@@ -18,6 +18,10 @@ tar xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz
 # Add Flutter to PATH
 export PATH="$PATH:/tmp/flutter/bin"
 
+# By default, Vercel gives us a read-only filesystem, and we need to
+# tell git that it's safe to use the Flutter repository.
+git config --global --add safe.directory /tmp/flutter
+
 # Go back to the source code directory Vercel uses
 cd $OLDPWD
 
