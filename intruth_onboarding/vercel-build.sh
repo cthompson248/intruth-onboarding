@@ -2,6 +2,9 @@
 # Exit on error
 set -e
 
+# Install wget
+apt-get update && apt-get install -y wget
+
 # Define Flutter version
 FLUTTER_VERSION="3.22.2"
 
