@@ -1,0 +1,2 @@
+#!/bin/bash
+/Users/carlthompson/Documents/GitHub/InTruth-Onboarding-01/development/flutter/bin/dart pub global run very_good_cli:very_good "$@"
