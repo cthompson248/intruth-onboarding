@@ -108,8 +108,15 @@ class _PageSyncedGradientState extends State<PageSyncedGradient>
         return Container(
           width: double.infinity,
           height: double.infinity,
-          // Remove debug background color
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: _getCurrentColors(),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
           child: CustomPaint(
+            size: Size.infinite,
             painter: PageSyncedGradientPainter(
               baseAnimation: _baseAnimation,
               pageAnimation: _pageAnimation,

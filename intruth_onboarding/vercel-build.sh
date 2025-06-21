@@ -31,4 +31,4 @@ flutter doctor -v
 
 # Run the actual build command
 echo "Running flutter build web..."
-flutter build web 
+flutter build web --release
