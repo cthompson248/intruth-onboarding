@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/onboarding_page_model.dart';
 import '../widgets/onboarding_page_widget.dart';
 import '../widgets/page_indicators.dart';
+import '../widgets/page_synced_gradient.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -59,9 +60,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
+    return Container(
+      color: Colors.black,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          children: [
+            // Page-synced gradient background
+            Positioned.fill(
+              child: PageSyncedGradient(
+                currentPage: _controller.currentPage,
+                totalPages: widget.pages.length,
+              ),
+            ),
           PageView.builder(
             controller: _pageController,
             onPageChanged: _controller.setCurrentPage,
@@ -117,6 +128,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
         ],
+      ),
       ),
     );
   }

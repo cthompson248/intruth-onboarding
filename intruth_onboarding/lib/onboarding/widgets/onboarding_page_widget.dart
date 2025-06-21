@@ -11,9 +11,7 @@ class OnboardingPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: page.backgroundColor,
-      child: SafeArea(
+    return SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -25,14 +23,18 @@ class OnboardingPageWidget extends StatelessWidget {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey[900],
+                      color: Colors.black.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.1),
+                        width: 1,
+                      ),
                     ),
                     child: Center(
                       child: Icon(
                         Icons.image,
                         size: 100,
-                        color: Colors.grey[700],
+                        color: Colors.white.withOpacity(0.3),
                       ),
                     ),
                   ),
@@ -61,7 +63,6 @@ class OnboardingPageWidget extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
